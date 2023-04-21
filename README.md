@@ -38,3 +38,8 @@ WHEN I click the save button for that timeblock
 THEN the text for that event is saved in local storage
 WHEN I refresh the page
 THEN the saved events persist
+
+## Sources
+Regex: https://stackoverflow.com/questions/10003683/how-can-i-extract-a-number-from-a-string-in-javascript
+Clear Local Storage: https://stackoverflow.com/questions/7667958/clearing-localstorage-in-javascript
+Name of Day and Month: https://stackabuse.com/how-to-get-name-of-month-and-day-in-javascript/
