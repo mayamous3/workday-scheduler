@@ -9,60 +9,57 @@ document.getElementById("currentDay").textContent =  now
 //ready function used to ensure page has rendered.
 //save button is listening for a click.
 $(document).ready(function () {
-  $("button").on("click", function () {
+  $(".saveBtn").on("click", function () {
      
       var appointment = $(".description").val();
-      var time = $(".hour").val();
+      var time = $(this).parent().attr("id");
 
-      // Save text in local storage
+      // save appointment in local storage
       localStorage.setItem(time, appointment);
   })
 
-  $("#hour-9 .description").val(localStorage.getItem("hour-9"));
-  $("#hour-10 .description").val(localStorage.getItem("hour-10"));
-  $("#hour-11 .description").val(localStorage.getItem("hour-11"));
-  $("#hour-12 .description").val(localStorage.getItem("hour-12"));
-  $("#hour-1p .description").val(localStorage.getItem("hour-1p"));
-  $("#hour-2p .description").val(localStorage.getItem("hour-2p"));
-  $("#hour-3p .description").val(localStorage.getItem("hour-3p"));
-  $("#hour-4p .description").val(localStorage.getItem("hour-4p"));
-  $("#hour-5p .description").val(localStorage.getItem("hour-5p"));
+    function blockColors()  {
+    //get hours from current date
+    var hourActual = today.getHours()
+    console.log(hourActual)
+
+    $(".time-block").each(function () {
+        //use regex to clear all non - digit values from string, and Parse as Int
+        var hourBlock = parseInt($(this).attr("id").replace(/^\D+/g, ''));
+        console.log(hourBlock)
+        if (hourBlock < hourActual) {
+            $(this).removeClass("future");
+            $(this).removeClass("present");
+            $(this).addClass("past");
+        }
+        else if (hourBlock > hourActual) {
+            $(this).removeClass("past");
+            $(this).removeClass("present");
+            $(this).addClass("future");
+        }    
+        else  {
+            $(this).removeClass("future");
+            $(this).removeClass("past");
+            $(this).addClass("present");
+        }      
+    })
+}
+
+$("#hour-9 .description").val(localStorage.getItem("hour-9"));
+$("#hour-10 .description").val(localStorage.getItem("hour-10"));
+$("#hour-11 .description").val(localStorage.getItem("hour-11"));
+$("#hour-12 .description").val(localStorage.getItem("hour-12"));
+$("#hour-13 .description").val(localStorage.getItem("hour-13"));
+$("#hour-14 .description").val(localStorage.getItem("hour-14"));
+$("#hour-15 .description").val(localStorage.getItem("hour-15"));
+$("#hour-16 .description").val(localStorage.getItem("hour-16"));
+$("#hour-17 .description").val(localStorage.getItem("hour-17"));
+
+blockColors()
+
 })
 
-function blockColors(){
-  var hour = today.getHours()
-  console.log(hour)
-
-
-}
-  // TODO: Add a listener for click events on the save button. This code should
-  // use the id in the containing time-block as a key to save the user input in
-  // local storage. HINT: What does `this` reference in the click listener
-  // function? How can DOM traversal be used to get the "hour-x" id of the
-  // time-block containing the button that was clicked? How might the id be
-  // useful when saving the description in local storage?
-  //
- // function calendarAction() {
-    // actually update the calendar here
-//}
-
-//function updateCalendar() {
-
-//    setTimeout(function() {
-//        calendarAction();
-   // }, 200);
-//}
-
-  // TODO: Add code to apply the past, present, or future class to each time
-  // block by comparing the id to the current hour. HINTS: How can the id
-  // attribute of each time-block be used to conditionally add or remove the
-  // past, present, and future classes? How can Day.js be used to get the
-  // current hour in 24-hour time?
-  //
-
-  // TODO: Add code to get any user input that was saved in localStorage and set
-  // the values of the corresponding textarea elements. HINT: How can the id
-  // attribute of each time-block be used to do this?
-  //
-
-  // TODO: Add code to display the current date in the header of the page.
+//create button to clear local storage
+clear.onclick = function () {
+  localStorage.clear();
+};
