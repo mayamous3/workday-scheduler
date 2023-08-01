@@ -1,7 +1,17 @@
 # Description
 Given html, css and js file with starter code for a workday scheduler.
 
-Task to enable users to add events to the scheduler using click events, local storage, and widgets.
+Task to enable users to add events to the scheduler using click events and local storage.
+
+
+<img width="810" alt="Screen Shot 2023-04-20 at 10 41 25 PM" src="https://user-images.githubusercontent.com/127701178/233528976-59c9f15d-709b-4acc-836a-17601576afb0.png">
+
+
+### Deployed Link
+https://mayamous3.github.io/workday-scheduler/
+
+### Application Preview
+![workday scheduler preview](./assets/images/workdayschedulerpreview.png)
 
 ### Deployed Link
 https://mayamous3.github.io/workday-scheduler/
@@ -40,6 +50,11 @@ WHEN I click the save button for that timeblock
 THEN the text for that event is saved in local storage
 WHEN I refresh the page
 THEN the saved events persist
+
+## Sources
+Regex: https://stackoverflow.com/questions/10003683/how-can-i-extract-a-number-from-a-string-in-javascript
+Clear Local Storage: https://stackoverflow.com/questions/7667958/clearing-localstorage-in-javascript
+Name of Day and Month: https://stackabuse.com/how-to-get-name-of-month-and-day-in-javascript/
 
 ## Author
 To learn more about me, please visit my portfolio site!
