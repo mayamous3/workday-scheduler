@@ -3,10 +3,6 @@ Given html, css and js file with starter code for a workday scheduler.
 
 Task to enable users to add events to the scheduler using click events and local storage.
 
-
-<img width="810" alt="Screen Shot 2023-04-20 at 10 41 25 PM" src="https://user-images.githubusercontent.com/127701178/233528976-59c9f15d-709b-4acc-836a-17601576afb0.png">
-
-
 ### Deployed Link
 https://mayamous3.github.io/workday-scheduler/
 
