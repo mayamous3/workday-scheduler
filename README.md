@@ -3,6 +3,12 @@ Given html, css and js file with starter code for a workday scheduler.
 
 Task to enable users to add events to the scheduler using click events, local storage, and widgets.
 
+### Deployed Link
+https://mayamous3.github.io/workday-scheduler/
+
+### Application Preview
+![workday scheduler preview](./assets/images/workdayschedulerpreview.png)
+
 ## Accomplishments
 - Enabled Users to save their scheduled events to local storage.
 - Applied color coding based on whether scheduled hour is in past, present or future.
@@ -34,3 +40,8 @@ WHEN I click the save button for that timeblock
 THEN the text for that event is saved in local storage
 WHEN I refresh the page
 THEN the saved events persist
+
+## Author
+To learn more about me, please visit my portfolio site!
+Link below.
+https://mayamous3.github.io/amanda-wow-portfolio/
